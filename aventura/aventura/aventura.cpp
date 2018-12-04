@@ -1,3 +1,29 @@
+/*
+CONTROLES:
+a - disparar
+flechas - moverse
+esc - pausa
+
+
+
+BUGS:
+-Todos los cuartos tienen los mismos limites
+-El menu de pausa no guarda el estado
+-No inicia nueva partida, pero si termina el programa
+-si se presiona otra tecla que no se utilice desaparece el personaje
+
+FALTA:
+-Guardar partida
+-Mover las clases al .h
+
+
+*/
+
+
+
+
+
+
 #define _CRT_NONSTDC_NO_DEPRECATE
 #include <iostream>
 #include <windows.h>
@@ -15,7 +41,7 @@ const int Enter{ 13 };
 const int Esc{ 27 };
 
 int cuarto{ 0 };
-bool check_room{ false }, game_over{ false }, game{ true }, won_game{ false }, inicializar{true};
+bool check_room{ false }, game_over{ false }, game{ true }, won_game{ false };
 
 
 char ascii(int num) {			//convierte el numero entero del codigo ascii
@@ -877,7 +903,7 @@ void pintarMapa(int cuarto, World &W) {
 }
 
 int main() {
-	while (inicializar == true) {
+
 		Mono M(39, 29, 3, true, false, false, false);
 		World W(0, false);
 		Boss B(35, 5, 100, false);
@@ -1079,6 +1105,6 @@ int main() {
 		}
 
 
-	}
+
 	return 0;
 }
